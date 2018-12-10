@@ -9,15 +9,6 @@ module.exports = env => ({
         '@babel/polyfill',
         path.join(__dirname, 'src/index.js'),
     ],
-    resolve: {
-        alias: {
-            ['@utils']: path.resolve(__dirname, 'src/utils/'),
-            ['@actions']: path.resolve(__dirname, 'src/actions/'),
-            ['@sagas']: path.resolve(__dirname, 'src/sagas/'),
-            ['@reducers']: path.resolve(__dirname, 'src/reducers/'),
-            ['@components']: path.resolve(__dirname, 'src/components/'),
-        },
-    },
     devtool: 'eval-source-map',
     target: 'web',
     plugins: [

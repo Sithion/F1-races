@@ -20,14 +20,12 @@
       "module-resolver",
       {
         "alias": {
-          "@routes": "./require-routes",
           "@components": "./src/components",
           "@reducers": "./src/reducers",
           "@actions": "./src/actions",
           "@sagas": "./src/sagas",
-          "@assets": "./src/assets",
           "@utils": "./src/utils",
-          "@models": "./src/models"
+          "@selectors": "./src/selectors"
         }
       }
     ]

@@ -1,8 +1,33 @@
-import {combineReducers} from 'redux';
-import race from './race';
+import actions from '@actions';
 
-const rootReducer = combineReducers({
-	race
-});
+const initialState = {
+    selected: null,
+    seasons: {},
+};
 
-export default rootReducer;
+const { types } = actions;
+
+export default (state = initialState, { payload, type }) => {
+    switch (type) {
+        case types.SELECT_YEAR:
+            return {
+                ...state,
+                selected: payload.year,
+            };
+        case types.SET_SEASON: {
+            const { races, year, champion } = payload;
+            return {
+                ...state,
+                seasons: {
+                    ...state.seasons,
+                    [year]: {
+                        races,
+                        champion,
+                    },
+                },
+            };
+        }
+        default:
+            return state;
+    }
+};

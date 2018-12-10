@@ -1,0 +1,33 @@
+.race-summary-container {
+    background-color: #fff;
+    color: #000;
+    margin: 30px;
+    width: 60%;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.race-summary-winner {
+    display: flex;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #000;
+}
+.race-summary-winner.champion{
+    background-color: #ff2800;
+    color: #fff;
+}
+
+.race-summary-winner > .race-summary-winner-round {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.race-summary-winner > .race-summary-winner-name {
+    display: flex;
+    flex: 1;
+    font-size:20px;
+    font-weight: 900;
+}

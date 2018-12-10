@@ -29,5 +29,5 @@ test('must trigger event prop \'onSelectYear\' when click in a item', (t) => {
     />);
     wrapper.find('button').at(0).simulate('click');
     t.truthy(onSelectYearMock.calledOnce);
-    t.is(onSelectYearMock.lastArg);
+    t.is(onSelectYearMock.lastArg, 2000);
 });
