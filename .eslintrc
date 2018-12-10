@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "no-tabs": "off",
+    "indent": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "react/prefer-stateless-function": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": "off"
+  }
+}
