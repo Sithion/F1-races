@@ -2,7 +2,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = env => ({
 	mode: 'development',
 	entry: [
@@ -11,6 +10,7 @@ module.exports = env => ({
 	],
 	resolve: {
 		alias: {
+            ['@utils']: path.resolve(__dirname, 'src/utils/'),
 			['@actions']: path.resolve(__dirname, 'src/actions/'),
 			['@sagas']: path.resolve(__dirname, 'src/sagas/'),
 			['@reducers']: path.resolve(__dirname, 'src/reducers/'),

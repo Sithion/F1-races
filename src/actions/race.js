@@ -1,17 +1,19 @@
 const types = {
-	GET_RACE_RESULTS: 'race/get-race-results',
-	SET_RACE_RESULTS: 'race/set-race-results',
+    SELECT_YEAR: 'race/select-year',
+    UPDATE_RACES_BY_YEAR: 'race/update-races-by-year',
 };
 
 export default {
-	types,
-	getRaceResults: (year) => ({
-		type: types.GET_RACE_RESULTS,
-		payload: {year}
-	}),
-	setRaceResults: (results) => ({
-		type: types.SET_RACE_RESULTS,
-		payload: {results}
-	})
-
+    types,
+    selectYear: (year) => {
+        console.log('selecting year 1', year);
+        return {
+            type: types.SELECT_YEAR,
+            payload: { year },
+        };
+    },
+    updateRacesByYear: (year, races) => ({
+        type: types.UPDATE_RACES_BY_YEAR,
+        payload: { year, races },
+    }),
 };

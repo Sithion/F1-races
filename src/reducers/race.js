@@ -1,26 +1,31 @@
 import actions from '@actions';
 
 const initialState = {
-	selectedYear: null,
-	selectedYearChampions: []
+    selectedYear: null,
+    races: {},
 };
 
-const {types} = actions.race;
+const { types } = actions.race;
 
-export default (state = initialState, {payload, type}) => {
-	switch(type){
-		case types.GET_RACE_RESULTS:
-			return {
-				...state,
-				selectedYear: payload.year,
-				selectedYearResults: []
-			};
-		case types.SET_RACE_RESULTS:
-			return {
-				...state,
-				selectedYearResults: payload.results
-			};
-		default:
-			return state;
-	}
+export default (state = initialState, { payload, type }) => {
+    switch (type) {
+        case types.SELECT_YEAR:
+            return {
+                ...state,
+                selectedYear: payload.year,
+                selectedYearResults: [],
+            };
+        case types.UPDATE_RACES_BY_YEAR: {
+            const { races, year } = payload;
+            return {
+                ...state,
+                races: {
+                    ...races,
+                    [year]: races,
+                },
+            };
+        }
+        default:
+            return state;
+    }
 };
