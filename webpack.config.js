@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = env => ({
     mode: 'development',
     entry: [
@@ -27,7 +28,7 @@ module.exports = env => ({
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            'process.env.dev': JSON.stringify(env && env.dev)
+            'process.env.dev': JSON.stringify(env && env.dev),
         }),
     ],
     module: {
@@ -35,7 +36,7 @@ module.exports = env => ({
             {
                 test: /^(?!.*test\.js).*\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
             },
             {
                 test: /\.css|\.scss$/,

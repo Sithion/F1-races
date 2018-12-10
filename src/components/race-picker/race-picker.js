@@ -8,10 +8,11 @@ class RacePicker extends Component {
         selectedYear: PropTypes.number,
         startYear: PropTypes.number,
         endYear: PropTypes.number,
-        onSelectYear: PropTypes.func.isRequired,
+        onSelectYear: PropTypes.func,
     };
 
     static defaultProps = {
+        onSelectYear: () => null,
         selectedYear: 0,
         startYear: 2008,
         endYear: 2018,

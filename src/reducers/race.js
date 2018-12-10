@@ -20,7 +20,7 @@ export default (state = initialState, { payload, type }) => {
             return {
                 ...state,
                 races: {
-                    ...races,
+                    ...state.races,
                     [year]: races,
                 },
             };
