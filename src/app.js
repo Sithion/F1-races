@@ -24,7 +24,12 @@ class App extends Component {
 
 
     render() {
-        const { selectedYear, onSelectYear, winners, champion } = this.props;
+        const {
+            selectedYear,
+            onSelectYear,
+            winners,
+            champion,
+        } = this.props;
         return (
             <div>
                 <header>
@@ -36,6 +41,8 @@ class App extends Component {
                         Select a year and see the champions for each round:
                     </div>
                     <RacePicker
+                        startYear={2005}
+                        endYear={2015}
                         onSelectYear={onSelectYear}
                         selectedYear={selectedYear}
                     />
