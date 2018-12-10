@@ -41,7 +41,7 @@ class App extends Component {
                 </header>
                 <main>
                     <div className="description">
-                        Select a year and see the champions for each round:
+                        Select a year and see the winners for each round and the highlighted row represents the season champion:
                     </div>
                     <RacePicker
                         startYear={2005}
