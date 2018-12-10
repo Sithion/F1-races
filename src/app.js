@@ -13,10 +13,12 @@ class App extends Component {
         onSelectYear: PropTypes.func.isRequired,
         selectedYear: PropTypes.number,
         winners: PropTypes.array,
+        loading: PropTypes.bool,
         champion: PropTypes.string,
     };
 
     static defaultProps = {
+        loading: false,
         champion: '',
         winners: [],
         selectedYear: 0,
@@ -29,6 +31,7 @@ class App extends Component {
             onSelectYear,
             winners,
             champion,
+            loading,
         } = this.props;
         return (
             <div>
@@ -47,6 +50,7 @@ class App extends Component {
                         selectedYear={selectedYear}
                     />
                     <RaceSummary
+                        loading={loading}
                         winners={winners}
                         champion={champion}
                     />
@@ -58,6 +62,7 @@ class App extends Component {
 
 const mapStateToProps = state => ({
     selectedYear: state.selected,
+    loading: state.loading,
     winners: selectors.getWinnersBySeason(state),
     champion: selectors.getSelectedSeason(state).champion,
 });

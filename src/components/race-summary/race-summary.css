@@ -7,14 +7,26 @@
     overflow-y: scroll;
 }
 
-.race-summary-winner {
+.race-summary-container > .race-summary-loading {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.race-summary-loading > i{
+    margin-left: 10px;
+    animation: loading 1s infinite;
+}
+
+.race-summary-container > .race-summary-winner {
     display: flex;
     height: 60px;
     flex-direction: row;
     align-items: center;
     border-top: 1px solid #000;
 }
-.race-summary-winner.champion{
+
+.race-summary-container > .race-summary-winner.champion {
     background-color: #ff2800;
     color: #fff;
 }
@@ -28,6 +40,12 @@
 .race-summary-winner > .race-summary-winner-name {
     display: flex;
     flex: 1;
-    font-size:20px;
+    font-size: 20px;
     font-weight: 900;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
 }

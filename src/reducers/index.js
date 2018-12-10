@@ -9,6 +9,11 @@ const { types } = actions;
 
 export default (state = initialState, { payload, type }) => {
     switch (type) {
+        case types.SET_LOADING:
+            return {
+                ...state,
+                loading: payload.loading,
+            };
         case types.SELECT_YEAR:
             return {
                 ...state,

@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 
 class RacePicker extends Component {
     static propTypes = {
+        loading: PropTypes.bool,
         winners: PropTypes.arrayOf(PropTypes.shape({
             round: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
@@ -13,6 +14,7 @@ class RacePicker extends Component {
     };
 
     static defaultProps = {
+        loading: false,
         winners: [],
         champion: '',
     };
@@ -36,10 +38,20 @@ class RacePicker extends Component {
         );
     }
 
+    renderLoading() {
+        return (
+            <div className="race-summary-loading">
+                Loading
+                <i className="fas fa-spinner" />
+            </div>
+        );
+    }
+
     render() {
-        const { winners } = this.props;
+        const { winners, loading } = this.props;
         return (
             <div className="race-summary-container">
+                {winners.length === 0 && loading && this.renderLoading()}
                 {_.map(winners, winner => this.renderWinnerRow(winner))}
             </div>
         );
