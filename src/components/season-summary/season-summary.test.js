@@ -2,7 +2,7 @@ import React from 'react';
 import test from 'ava';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import RaceSummary from './race-summary';
+import RaceSummary from './season-summary';
 
 
 test('must render correctly', (t) => {

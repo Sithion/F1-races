@@ -42,7 +42,7 @@ class RacePicker extends Component {
         return (
             <div className="race-summary-loading">
                 Loading
-                <i className="fas fa-spinner" />
+                <i className="fas fa-spinner fa-spin" />
             </div>
         );
     }

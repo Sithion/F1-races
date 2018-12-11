@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as _ from 'lodash';
 import classNames from 'classnames';
 
-class RacePicker extends Component {
+class SeasonPicker extends Component {
     static propTypes = {
         selectedYear: PropTypes.number,
         startYear: PropTypes.number,
@@ -47,4 +47,4 @@ class RacePicker extends Component {
     }
 }
 
-export default RacePicker;
+export default SeasonPicker;
